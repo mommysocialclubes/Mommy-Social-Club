@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mommy Social Club · Taller UGC para mamás en Madrid</title>
+<meta name="description" content="Empieza el 2027 con todo: taller presencial de contenido UGC para mamás en Alopeke (Madrid), domingo 13 de diciembre por la mañana. Cuidado de niños incluido. Solo 20 plazas.">
+<meta property="og:title" content="Mommy Social Club · Empieza el 2027 con todo">
+<meta property="og:description" content="Taller de contenido UGC para mamás en Alopeke, Madrid. 13 de diciembre, por la mañana. Cuidado de niños incluido.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFE6A2">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: bandas de color a todo el ancho (butter → crema → salvia → rosa → carbon), contenido en columna de 1120px, tarjetas solo para las entradas */
+:root{
+  --carbon:#303F20; --crema:#FBF7EC; --sand:#EAD9C8; --butter:#FFE6A2; --yellow:#F5C861;
+  --salvia:#C9D6C0; --sage:#8DA389; --sage-text:#A3B79F; --rosa:#F8C9D5; --terracota:#D9A48E;
+  --ink-soft:#4d5a3e;
+  --display:"Fredoka", "Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body:"Montserrat", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--crema);color:var(--carbon);font-family:var(--body);font-size:16px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--butter)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sage);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,112px)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--carbon);transition:transform .2s ease, background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--carbon);color:var(--crema)}
+.btn-ghost{background:transparent;color:var(--carbon)}
+.btn-ghost:hover{background:var(--crema)}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--butter);border-bottom:1px solid rgba(31,31,31,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* Logo */
+.mark{display:inline-flex;text-decoration:none;line-height:0}
+.mark img{height:52px;width:auto;display:block}
+.hero-logo{display:block;width:min(560px,100%);height:auto;margin:0 0 8px -2%}
+.foot-logo{background:var(--butter);border-radius:20px;padding:8px 14px;line-height:0}
+.foot-logo img{height:48px;width:auto}
+
+/* Hero */
+.hero{background:var(--butter);padding-block:clamp(48px,7vw,96px) clamp(64px,8vw,104px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:600;letter-spacing:-.015em}
+.hero h1 em{font-style:normal;font-weight:600;color:var(--sage)}
+.hero .lead{font-size:clamp(17px,1.6vw,19px);max-width:34ch;margin-top:24px;color:var(--ink-soft)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.ticket{background:var(--crema);border-radius:28px;padding:30px;position:relative;box-shadow:0 30px 60px -30px rgba(31,31,31,.35);transform:rotate(2deg)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:66%;width:28px;height:28px;border-radius:50%;background:var(--butter)}
+.ticket::before{left:-14px}.ticket::after{right:-14px}
+.ticket .eyebrow{color:var(--sage)}
+.ticket h2{font-size:clamp(28px,3vw,36px);margin-top:10px}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0 0;font-size:15px}
+.ticket dt{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+.ticket dd{margin:0}
+.ticket .stub{border-top:2px dashed var(--sand);margin-top:26px;padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.ticket .price{font-family:var(--display);font-size:44px;font-weight:600;line-height:1}
+.ticket .price small{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-soft);margin-left:4px}
+.hearts{color:#E8A5A5;font-size:18px;letter-spacing:4px}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.ticket{transform:none;max-width:460px}}
+
+/* Qué es */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
+.about h2{font-size:clamp(34px,4.6vw,56px)}
+.about .copy{display:grid;gap:18px;font-size:17px;max-width:60ch;color:var(--ink-soft)}
+.about .copy strong{color:var(--carbon);font-weight:600}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);margin-top:clamp(48px,6vw,80px);padding-top:40px;border-top:1px solid var(--sand)}
+.pillar h3{font-size:24px;margin-bottom:10px}
+.pillar p{font-size:15px;color:var(--ink-soft)}
+.pillar .tag{display:inline-block;font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+@media (max-width:860px){.about-grid,.pillars{grid-template-columns:1fr}}
+
+/* Taller */
+.taller{background:var(--salvia)}
+.taller-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.taller h2{font-size:clamp(34px,4.6vw,56px);max-width:16ch}
+.taller-head p{max-width:42ch;font-size:17px}
+.calm{margin-top:48px;background:var(--crema);border-radius:28px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.calm .big{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,40px);line-height:1.2;max-width:28ch}
+.calm .badge{width:120px;height:120px;border-radius:50%;background:var(--butter);display:grid;place-items:center;text-align:center;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;padding:14px}
+.calm p.small{font-size:15px;color:var(--ink-soft);margin-top:14px;max-width:60ch}
+.agenda{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--carbon)}
+.agenda li{padding:22px 22px 0 0}
+.agenda .when{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#3f5a3c}
+.agenda h3{font-size:22px;margin:8px 0}
+.agenda p{font-size:15px}
+@media (max-width:860px){.agenda{grid-template-columns:1fr 1fr;row-gap:24px}.calm{grid-template-columns:1fr}}
+@media (max-width:520px){.agenda{grid-template-columns:1fr}}
+
+/* Entradas */
+.entradas h2{font-size:clamp(34px,4.6vw,56px)}
+.entradas .intro{max-width:52ch;margin-top:16px;font-size:17px;color:var(--ink-soft)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.plan{border-radius:28px;padding:clamp(28px,3.5vw,40px);display:flex;flex-direction:column;gap:20px}
+.plan-general{background:var(--sand)}
+.plan-premium{background:var(--carbon);color:var(--crema)}
+.plan-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.plan h3{font-size:30px}
+.plan .price{font-family:var(--display);font-size:52px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.plan .price small{font-family:var(--body);font-size:14px;font-weight:500;opacity:.75}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.plan li{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.plan li::before{content:"♥";color:var(--sage);font-size:13px;padding-top:2px}
+.plan-premium li::before{color:var(--yellow)}
+.plan .chip{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.plan-general .chip{background:var(--crema)}
+.plan-premium .chip{background:var(--yellow);color:var(--carbon)}
+.plan .btn{align-self:flex-start;margin-top:auto}
+.plan-premium .btn{background:var(--yellow);color:var(--carbon);border-color:var(--yellow)}
+.seats{display:flex;gap:6px;align-items:center;font-size:13px}
+.seats span{width:14px;height:14px;border-radius:50%;background:var(--yellow)}
+@media (max-width:860px){.plans{grid-template-columns:1fr}}
+
+/* Equipo */
+.equipo{background:var(--rosa)}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:44px}
+.person{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:center}
+.photo{aspect-ratio:3/4;width:100%;max-width:100%;height:auto;border-radius:999px 999px 24px 24px;background:var(--crema);object-fit:cover;object-position:50% 20%;display:block}
+.space{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;margin-top:20px}
+.space figure{margin:0;border-radius:22px;overflow:hidden;background:var(--crema)}
+.space img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/2}
+.space .main{grid-row:span 2}
+.space .main img{aspect-ratio:auto;min-height:100%}
+.space .wide{grid-column:span 2}
+.space .wide img{aspect-ratio:2.2/1}
+.space-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;align-items:baseline}
+.space-cap h3{font-size:clamp(24px,2.6vw,30px)}
+.space-cap p{font-size:15px;max-width:48ch}
+@media (max-width:860px){.space{grid-template-columns:1fr 1fr}.space .main{grid-column:span 2;grid-row:auto}.space .main img{aspect-ratio:3/2}}
+@media (max-width:520px){.space{grid-template-columns:1fr}.space .main,.space .wide{grid-column:auto}.space .wide img{aspect-ratio:3/2}}
+.person h3{font-size:28px}
+.person .role{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:6px 0 12px;color:#7a4a3a}
+.person p{font-size:15px}
+.equipo h2{font-size:clamp(34px,4.6vw,56px)}
+@media (max-width:860px){.team{grid-template-columns:1fr}}
+@media (max-width:420px){.person{grid-template-columns:96px 1fr;gap:16px}}
+
+/* Marcas */
+.marcas-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.marcas h2{font-size:clamp(34px,4.6vw,56px)}
+.marcas .copy{font-size:17px;color:var(--ink-soft);margin-top:18px;max-width:48ch}
+.offer{list-style:none;margin:0;padding:0;border-top:1px solid var(--sand)}
+.offer li{display:grid;grid-template-columns:1fr auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--sand);align-items:baseline}
+.offer b{font-family:var(--display);font-size:22px;font-weight:600}
+.offer span{font-size:13px;color:var(--ink-soft);text-align:right}
+.marcas .btn{margin-top:28px}
+.partner{margin-top:28px;display:flex;align-items:center;gap:14px;font-size:14px;color:var(--ink-soft)}
+.partner strong{font-family:var(--display);font-size:22px;color:var(--carbon);font-weight:600}
+@media (max-width:860px){.marcas-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{background:var(--sand)}
+.faq h2{font-size:clamp(34px,4.6vw,56px)}
+.faq-list{margin-top:36px;max-width:800px}
+details{border-bottom:1px solid rgba(31,31,31,.15)}
+summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;font-family:var(--display);font-size:clamp(19px,2vw,23px);font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--body);font-weight:400;font-size:28px;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;max-width:62ch;color:var(--ink-soft)}
+
+/* Contacto */
+.contacto{background:var(--carbon);color:var(--crema)}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.contacto h2{font-size:clamp(36px,5vw,64px);color:var(--crema)}
+.contacto h2 em{color:var(--yellow);font-style:normal}
+.contacto .copy{margin-top:18px;font-size:17px;opacity:.85;max-width:40ch}
+form{display:grid;gap:16px}
+label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:grid;gap:8px}
+input,select,textarea{font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;font-weight:400;padding:14px 16px;border-radius:14px;border:1.5px solid #56663f;background:#3a4a28;color:var(--crema);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yellow)}
+textarea{min-height:110px;resize:vertical}
+form .btn{background:var(--yellow);color:var(--carbon);border-color:var(--yellow);justify-self:start;cursor:pointer}
+.sent{background:var(--salvia);color:var(--carbon);padding:16px 18px;border-radius:14px;font-size:15px}
+@media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
+
+footer{background:var(--carbon);color:var(--crema);border-top:1px solid #45552f}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-block:28px;font-size:13px;opacity:.8}
+footer .mark{color:var(--crema)}
+footer .mark .club{color:var(--sage-text)}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="#inicio"><img src="img/logo-sm.png" alt="Mommy Social Club" width="440" height="231"></a>
+    <ul>
+      <li><a href="#club">El club</a></li>
+      <li><a href="#taller">Taller</a></li>
+      <li><a href="#entradas">Entradas</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#faq">Dudas</a></li>
+    </ul>
+    <a class="btn btn-dark" href="#entradas">Reservar plaza</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img class="hero-logo" src="img/logo.png" alt="Mommy Social Club" width="1652" height="870">
+        <p class="eyebrow">Comunidad de mamás creadoras · Madrid</p>
+        <h1 style="margin-top:14px">Empieza el 2027<br><em>con todo.</em></h1>
+        <p class="lead">Una mañana para aprender a crear contenido UGC para marcas, rodeada de otras mamás, mientras tus hijos juegan a dos pasos de ti.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="#entradas">Quiero mi plaza</a>
+          <a class="btn btn-ghost" href="#club">Qué es el club</a>
+        </div>
+      </div>
+      <aside class="ticket" aria-label="Próximo taller">
+        <p class="eyebrow">Próximo taller presencial</p>
+        <h2>Mommy Social Club × Alopeke</h2>
+        <dl>
+          <dt>Cuándo</dt><dd>Domingo 13 de diciembre de 2026, por la mañana</dd>
+          <dt>Dónde</dt><dd>Local de Alopeke, Madrid</dd>
+          <dt>Duración</dt><dd>Unas 4–5 horas</dd>
+          <dt>Plazas</dt><dd>Solo 20 mamás</dd>
+        </dl>
+        <div class="stub">
+          <span class="price">65 €<small>por persona</small></span>
+          <span class="hearts" aria-hidden="true">♥ ♥ ♥</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band about" id="club">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow" style="color:var(--sage)">El club</p>
+          <h2 style="margin-top:14px">Para mamás que quieren crear sin dejar de ser mamás</h2>
+        </div>
+        <div class="copy">
+          <p>Mommy Social Club nace para que las madres aprendan a crear <strong>contenido UGC</strong>: los vídeos y fotos que las marcas encargan a personas reales para enseñar sus productos en redes.</p>
+          <p>No hace falta tener muchos seguidores. Hace falta saber grabar con el móvil, contar algo con naturalidad y saber cómo presentarte a una marca. Eso es lo que te enseñamos, en grupo y en un sitio donde tus hijos también se lo pasan bien.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="tag" style="background:var(--butter)">Aprender</span>
+          <h3>Del móvil al portfolio</h3>
+          <p>Grabación, luz, guion y edición con lo que ya tienes en casa. Sales con tus primeras piezas.</p>
+        </div>
+        <div class="pillar">
+          <span class="tag" style="background:var(--salvia)">Conectar</span>
+          <h3>Una tribu que entiende tu día</h3>
+          <p>Mamás en el mismo punto que tú, con las mismas siestas que cuadrar y las mismas ganas de empezar.</p>
+        </div>
+        <div class="pillar">
+          <span class="tag" style="background:var(--rosa)">Crecer</span>
+          <h3>Tus primeras colaboraciones</h3>
+          <p>Cómo escribir a marcas, qué cobrar y cómo preparar una propuesta que te tomen en serio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band taller" id="taller">
+    <div class="wrap">
+      <div class="taller-head">
+        <div>
+          <p class="eyebrow">Taller presencial · 13 de diciembre</p>
+          <h2 style="margin-top:14px">Una mañana para ti, con los peques cerca</h2>
+        </div>
+        <p>Un taller práctico en el espacio de Alopeke, en Madrid, para cerrar el año con un plan y arrancar 2027 creando. Solo 20 plazas, para que cada una reciba atención.</p>
+      </div>
+
+      <div class="calm">
+        <div class="badge">Cuidado<br>de niños<br>incluido</div>
+        <div>
+          <p class="big">Tú aprendes. Alopeke se encarga de los peques.</p>
+          <p class="small">El equipo de monitores de Alopeke cuida a los niños con actividades pensadas para ellos durante todo el taller, en el mismo local. Te avisamos de las edades admitidas al reservar.</p>
+        </div>
+      </div>
+
+      <div class="space-cap">
+        <h3>El espacio de Alopeke</h3>
+        <p>Zona de juego con tobogán, piscina de bolas y casitas para los peques, y mesas tranquilas para nosotras.</p>
+      </div>
+      <div class="space">
+        <figure class="main"><img src="img/alopeke-1.jpg" alt="Interior de Alopeke con zona de juego y cafetería" width="1400" height="933" loading="lazy"></figure>
+        <figure><img src="img/alopeke-2.jpg" alt="Casitas de madera, tobogán y piscina de bolas" width="1000" height="666" loading="lazy"></figure>
+        <figure><img src="img/alopeke-4.jpg" alt="Tobogán amarillo y zona acolchada" width="1000" height="666" loading="lazy"></figure>
+        <figure class="wide"><img src="img/alopeke-3.jpg" alt="Mesas blancas junto a la tienda de Alopeke" width="1000" height="666" loading="lazy"></figure>
+      </div>
+
+      <ol class="agenda" aria-label="Cómo es el día">
+        <li><p class="when">Llegada</p><h3>Bienvenida</h3><p>Dejas a los peques con los monitores y conoces al grupo.</p></li>
+        <li><p class="when">Bloque 1</p><h3>Qué es el UGC</h3><p>Cómo funciona, qué buscan las marcas y cuánto se cobra.</p></li>
+        <li><p class="when">Bloque 2</p><h3>Manos al móvil</h3><p>Grabamos piezas reales con productos: luz, planos y guion.</p></li>
+        <li><p class="when">Cierre</p><h3>Tu siguiente paso</h3><p>Portfolio, primeras propuestas y networking con un café.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band entradas" id="entradas">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--sage)">Entradas</p>
+      <h2 style="margin-top:14px">Elige cómo vienes</h2>
+      <p class="intro">Las dos incluyen el taller completo y el cuidado de los niños. La premium añade acompañamiento después.</p>
+      <div class="plans">
+        <article class="plan plan-general">
+          <div class="plan-top">
+            <h3>General</h3>
+            <span class="chip">20 plazas</span>
+          </div>
+          <p class="price">65 €<small> / mamá</small></p>
+          <ul>
+            <li>Taller presencial de 4–5 horas</li>
+            <li>Cuidado y actividades para tus hijos con Alopeke</li>
+            <li>Material práctico y piezas grabadas en el taller</li>
+            <li>Acceso a la comunidad Mommy Social Club</li>
+          </ul>
+          <a class="btn btn-dark" href="#contacto" data-plan="General">Reservar general</a>
+        </article>
+        <article class="plan plan-premium">
+          <div class="plan-top">
+            <h3>Premium</h3>
+            <span class="chip">Solo 5 plazas</span>
+          </div>
+          <p class="price">Consúltanos</p>
+          <ul>
+            <li>Todo lo de la entrada general</li>
+            <li>Asesorías individuales después del taller con Astrid y Pao</li>
+            <li>Revisión de tu portfolio y de tus primeras propuestas a marcas</li>
+            <li>Seguimiento cercano en tus primeras colaboraciones</li>
+          </ul>
+          <div class="seats" aria-label="5 plazas premium"><span></span><span></span><span></span><span></span><span></span>&nbsp;5 plazas</div>
+          <a class="btn" href="#contacto" data-plan="Premium">Pedir plaza premium</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band equipo" id="equipo">
+    <div class="wrap">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2 style="margin-top:14px">Dos mamás detrás del club</h2>
+      <div class="team">
+        <div class="person">
+          <img class="photo" src="img/astrid.jpg" alt="Astrid" width="600" height="900" loading="lazy">
+          <div>
+            <h3>Astrid</h3>
+            <p class="role">Cofundadora</p>
+            <p>Mamá y creadora de contenido. Breve bio de Astrid: experiencia con marcas y qué aporta al taller.</p>
+          </div>
+        </div>
+        <div class="person">
+          <img class="photo" src="img/pao.jpg" alt="Paola" width="600" height="900" loading="lazy" style="object-position:50% 12%">
+          <div>
+            <h3>Paola</h3>
+            <p class="role">Cofundadora</p>
+            <p>Mamá y creadora de contenido. Breve bio de Pao: experiencia con marcas y qué aporta al taller.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band marcas" id="marcas">
+    <div class="wrap marcas-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--sage)">Para marcas</p>
+        <h2 style="margin-top:14px">Llega a las mamás a través de mamás</h2>
+        <p class="copy">Buscamos marcas que quieran patrocinar nuestros talleres. Tu producto llega a manos de madres que lo prueban y lo cuentan con su propia voz.</p>
+        <a class="btn btn-dark" href="#contacto" data-plan="Marca">Pedir el dossier</a>
+        <div class="partner">Colaboración actual <strong>Alopeke</strong></div>
+      </div>
+      <ul class="offer">
+        <li><b>Contenido UGC real</b><span>piezas grabadas con tu producto</span></li>
+        <li><b>Visibilidad co-branded</b><span>en el evento y en redes</span></li>
+        <li><b>Contacto directo</b><span>con tu público objetivo</span></li>
+        <li><b>Producto en el taller</b><span>muestras, goodie bag o demo</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band faq" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Dudas</p>
+      <h2 style="margin-top:14px">Lo que nos preguntáis</h2>
+      <div class="faq-list">
+        <details open>
+          <summary>¿Necesito tener muchos seguidores?</summary>
+          <p>No. En el UGC las marcas pagan por el contenido, no por tu audiencia. Puedes empezar desde cero.</p>
+        </details>
+        <details>
+          <summary>¿Qué edades pueden tener los niños?</summary>
+          <p>Lo estamos cerrando con Alopeke. Cuando reserves te confirmamos las edades admitidas y qué actividades habrá.</p>
+        </details>
+        <details>
+          <summary>¿Qué tengo que traer?</summary>
+          <p>Tu móvil con batería y espacio libre. Si tienes un trípode pequeño o un aro de luz, tráelo; si no, no pasa nada.</p>
+        </details>
+        <details>
+          <summary>¿En qué se diferencia la entrada premium?</summary>
+          <p>Incluye asesorías individuales con Astrid y Pao después del taller para revisar tu portfolio y acompañarte en tus primeras colaboraciones. Solo hay 5.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contacto" id="contacto">
+    <div class="wrap contacto-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--sage-text)">Reservas y marcas</p>
+        <h2 style="margin-top:14px">Guárdate <em>tu sitio</em></h2>
+        <p class="copy">Déjanos tus datos y te escribimos para confirmar la plaza y el pago. Si eres una marca, te enviamos el dossier.</p>
+      </div>
+      <!-- FORMULARIO: pega aquí la URL de tu servicio de formularios (p. ej. Formspree) en action. Ver LEEME.txt -->
+      <form id="form" action="" method="POST" novalidate>
+        <label for="f-name">Nombre<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="f-type">Me interesa
+          <select id="f-type" name="type">
+            <option>Entrada general</option>
+            <option>Entrada premium</option>
+            <option>Soy una marca</option>
+          </select>
+        </label>
+        <label for="f-msg">Cuéntanos algo (opcional)<textarea id="f-msg" name="msg" placeholder="Edad de tus peques, dudas, tu marca…"></textarea></label>
+        <button class="btn" type="submit">Enviar</button>
+        <p class="sent" id="sent" hidden>¡Gracias! Te escribiremos en unos días para confirmar.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="foot-logo"><img src="img/logo-sm.png" alt="Mommy Social Club" width="440" height="231"></span>
+    <span>Madrid · Talleres de contenido UGC para mamás · 2026</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',()=>{
+  const map={General:'Entrada general',Premium:'Entrada premium',Marca:'Soy una marca'};
+  document.getElementById('f-type').value=map[a.dataset.plan];
+}));
+document.getElementById('form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target;
+  if(!f.checkValidity()){f.reportValidity();return;}
+  const ok=document.getElementById('sent');
+  if(f.action && f.getAttribute('action')){
+    try{
+      const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
+      if(!r.ok) throw new Error();
+      f.reset(); ok.textContent='¡Gracias! Te escribiremos en unos días para confirmar.';
+    }catch(err){ ok.textContent='No se ha podido enviar. Inténtalo de nuevo en unos minutos.'; }
+  }
+  ok.hidden=false;
+});
+</script>
+</body>
+</html>
