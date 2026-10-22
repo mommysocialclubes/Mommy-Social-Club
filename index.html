@@ -12,8 +12,12 @@
 <meta name="theme-color" content="#FFE6A2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fredoka.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Fredoka";src:url("fredoka.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("montserrat.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+</style>
 <style>
 html{-webkit-text-size-adjust:100%}
 body{margin:0}
@@ -40,7 +44,7 @@ a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .band{padding-block:clamp(64px,9vw,112px)}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--carbon);transition:transform .2s ease, background .2s ease}
+.btn{font-family:inherit;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--carbon);transition:transform .2s ease, background .2s ease}
 .btn:hover{transform:translateY(-2px)}
 .btn-dark{background:var(--carbon);color:var(--crema)}
 .btn-ghost{background:transparent;color:var(--carbon)}
@@ -194,6 +198,14 @@ label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:upperca
 input,select,textarea{font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;font-weight:400;padding:14px 16px;border-radius:14px;border:1.5px solid #56663f;background:#3a4a28;color:var(--crema);width:100%}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yellow)}
 textarea{min-height:110px;resize:vertical}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+label.check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:14px;font-weight:400;letter-spacing:normal;text-transform:none;line-height:1.5;opacity:.92}
+label.check input{width:20px;height:20px;padding:0;margin:2px 0 0;accent-color:var(--yellow)}
+label.check a,.rgpd a{color:var(--yellow)}
+.rgpd{font-size:12px;line-height:1.55;opacity:.72;max-width:62ch}
+.rgpd b{font-weight:600}
+.sent.error{background:var(--rosa)}
+.foot a{color:inherit;text-underline-offset:3px}
 form .btn{background:var(--yellow);color:var(--carbon);border-color:var(--yellow);justify-self:start;cursor:pointer}
 .sent{background:var(--salvia);color:var(--carbon);padding:16px 18px;border-radius:14px;font-size:15px}
 @media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
@@ -436,20 +448,23 @@ footer .mark .club{color:var(--sage-text)}
         <h2 style="margin-top:14px">Guárdate <em>tu sitio</em></h2>
         <p class="copy">Déjanos tus datos y te escribimos para confirmar la plaza y el pago. Si eres una marca, te enviamos el dossier.</p>
       </div>
-      <!-- FORMULARIO: pega aquí la URL de tu servicio de formularios (p. ej. Formspree) en action. Ver LEEME.txt -->
-      <form id="form" action="" method="POST" novalidate>
-        <label for="f-name">Nombre<input id="f-name" name="name" autocomplete="name" required></label>
+      <form id="form" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <label for="f-name">Nombre<input id="f-name" name="Nombre" autocomplete="name" required></label>
         <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
         <label for="f-type">Me interesa
-          <select id="f-type" name="type">
+          <select id="f-type" name="Me interesa">
             <option>Entrada general</option>
             <option>Entrada premium</option>
             <option>Soy una marca</option>
           </select>
         </label>
-        <label for="f-msg">Cuéntanos algo (opcional)<textarea id="f-msg" name="msg" placeholder="Edad de tus peques, dudas, tu marca…"></textarea></label>
-        <button class="btn" type="submit">Enviar</button>
-        <p class="sent" id="sent" hidden>¡Gracias! Te escribiremos en unos días para confirmar.</p>
+        <label for="f-msg">Cuéntanos algo (opcional)<textarea id="f-msg" name="Mensaje" placeholder="Edad de tus peques, dudas, tu marca…"></textarea></label>
+        <label class="check" for="f-privacy"><input id="f-privacy" type="checkbox" name="Acepta privacidad" value="Sí" required><span>He leído y acepto la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+        <label class="check" for="f-news"><input id="f-news" type="checkbox" name="Quiere novedades" value="Sí"><span>Quiero recibir por email novedades y próximos talleres de Mommy Social Club (opcional).</span></label>
+        <p class="rgpd"><b>Información básica sobre protección de datos.</b> Responsable: Mommy Social Club. Finalidad: gestionar tu reserva o solicitud y, si lo marcas, enviarte novedades. Legitimación: tu consentimiento. Destinatarios: no se ceden datos a terceros, salvo a los proveedores que nos prestan el servicio de formularios y correo. Derechos: acceder, rectificar y suprimir tus datos, entre otros, escribiendo a mommysocialclubes@gmail.com. <a href="legal.html#privacidad">Más información</a>.</p>
+        <button class="btn" type="submit" id="f-submit">Enviar</button>
+        <p class="sent" id="sent" role="status" hidden></p>
       </form>
     </div>
   </section>
@@ -458,7 +473,7 @@ footer .mark .club{color:var(--sage-text)}
 <footer>
   <div class="wrap foot">
     <span class="foot-logo"><img src="logo-sm.png" alt="Mommy Social Club" width="440" height="231"></span>
-    <span>Madrid · Talleres de contenido UGC para mamás · 2026</span>
+    <span>Madrid · Talleres de contenido UGC para mamás · 2026 · <a href="legal.html">Aviso legal y privacidad</a></span>
   </div>
 </footer>
 
@@ -469,17 +484,28 @@ document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',(
 }));
 document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const f=e.target;
+  const f=e.target, ok=document.getElementById('sent'), btn=document.getElementById('f-submit');
   if(!f.checkValidity()){f.reportValidity();return;}
-  const ok=document.getElementById('sent');
-  if(f.action && f.getAttribute('action')){
-    try{
-      const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
-      if(!r.ok) throw new Error();
-      f.reset(); ok.textContent='¡Gracias! Te escribiremos en unos días para confirmar.';
-    }catch(err){ ok.textContent='No se ha podido enviar. Inténtalo de nuevo en unos minutos.'; }
+  if(f._honey.value) return;
+  const data=Object.fromEntries(new FormData(f));
+  delete data._honey;
+  if(!data['Quiere novedades']) data['Quiere novedades']='No';
+  data._subject='Nueva solicitud: '+data['Me interesa']+' · Mommy Social Club';
+  data._template='table';
+  data._captcha='false';
+  btn.disabled=true; btn.textContent='Enviando…';
+  ok.classList.remove('error');
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/mommysocialclubes@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.success==='false'||j.success===false) throw new Error();
+    f.reset();
+    ok.textContent='¡Gracias! Hemos recibido tu solicitud. Te escribiremos en unos días para confirmar.';
+  }catch(err){
+    ok.classList.add('error');
+    ok.textContent='No se ha podido enviar. Inténtalo de nuevo en unos minutos o escríbenos a mommysocialclubes@gmail.com.';
   }
-  ok.hidden=false;
+  ok.hidden=false; btn.disabled=false; btn.textContent='Enviar';
 });
 </script>
 </body>

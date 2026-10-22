@@ -10,8 +10,12 @@
 <meta name="theme-color" content="#FFE6A2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fredoka.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Fredoka";src:url("fredoka.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("montserrat.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+</style>
 <style>
 html{-webkit-text-size-adjust:100%}
 body{margin:0}
@@ -38,7 +42,7 @@ a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .band{padding-block:clamp(64px,9vw,112px)}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--carbon);transition:transform .2s ease, background .2s ease}
+.btn{font-family:inherit;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--carbon);transition:transform .2s ease, background .2s ease}
 .btn:hover{transform:translateY(-2px)}
 .btn-dark{background:var(--carbon);color:var(--crema)}
 .btn-ghost{background:transparent;color:var(--carbon)}
@@ -341,7 +345,7 @@ footer .mark .club{color:var(--sage-text)}
 <footer>
   <div class="wrap foot">
     <span class="foot-logo"><img src="logo-sm.png" alt="Mommy Social Club" width="440" height="231"></span>
-    <span>Madrid · Talleres de contenido UGC para mamás · 2026</span>
+    <span>Madrid · Talleres de contenido UGC para mamás · 2026 · <a href="legal.html">Aviso legal y privacidad</a></span>
   </div>
 </footer>
 </body>
