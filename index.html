@@ -351,7 +351,7 @@ footer .mark .club{color:var(--sage-text)}
             <li>Material práctico y piezas grabadas en el taller</li>
             <li>Acceso a la comunidad Mommy Social Club</li>
           </ul>
-          <a class="btn btn-dark" href="#contacto" data-plan="General">Reservar general</a>
+          <a class="btn btn-dark" href="https://entradium.com/organizers/mommy-social-club" target="_blank" rel="noopener">Comprar entrada general ↗</a>
         </article>
         <article class="plan plan-premium">
           <div class="plan-top">
@@ -366,7 +366,7 @@ footer .mark .club{color:var(--sage-text)}
             <li>Seguimiento cercano en tus primeras colaboraciones</li>
           </ul>
           <div class="seats" aria-label="5 plazas premium"><span></span><span></span><span></span><span></span><span></span>&nbsp;5 plazas</div>
-          <a class="btn" href="#contacto" data-plan="Premium">Pedir plaza premium</a>
+          <a class="btn" href="https://entradium.com/organizers/mommy-social-club" target="_blank" rel="noopener">Comprar entrada premium ↗</a>
         </article>
       </div>
     </div>
@@ -444,9 +444,10 @@ footer .mark .club{color:var(--sage-text)}
   <section class="band contacto" id="contacto">
     <div class="wrap contacto-grid">
       <div>
-        <p class="eyebrow" style="color:var(--sage-text)">Reservas y marcas</p>
-        <h2 style="margin-top:14px">Guárdate <em>tu sitio</em></h2>
-        <p class="copy">Déjanos tus datos y te escribimos para confirmar la plaza y el pago. Si eres una marca, te enviamos el dossier.</p>
+        <p class="eyebrow" style="color:var(--sage-text)">Dudas y marcas</p>
+        <h2 style="margin-top:14px">Escríbenos <em>sin miedo</em></h2>
+        <p class="copy">Las entradas se compran en Entradium. Si tienes alguna duda antes de comprar, o eres una marca y quieres el dossier, déjanos tus datos y te respondemos.</p>
+        <p style="margin-top:24px"><a class="btn" style="background:var(--yellow);color:var(--carbon);border-color:var(--yellow)" href="https://entradium.com/organizers/mommy-social-club" target="_blank" rel="noopener">Comprar entradas en Entradium ↗</a></p>
       </div>
       <form id="form" novalidate>
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
@@ -454,8 +455,8 @@ footer .mark .club{color:var(--sage-text)}
         <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
         <label for="f-type">Me interesa
           <select id="f-type" name="Me interesa">
-            <option>Entrada general</option>
-            <option>Entrada premium</option>
+            <option>Tengo una duda sobre el taller</option>
+            <option>Quiero info de la entrada premium</option>
             <option>Soy una marca</option>
           </select>
         </label>
@@ -479,7 +480,7 @@ footer .mark .club{color:var(--sage-text)}
 
 <script>
 document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',()=>{
-  const map={General:'Entrada general',Premium:'Entrada premium',Marca:'Soy una marca'};
+  const map={Marca:'Soy una marca'};
   document.getElementById('f-type').value=map[a.dataset.plan];
 }));
 document.getElementById('form').addEventListener('submit',async e=>{
